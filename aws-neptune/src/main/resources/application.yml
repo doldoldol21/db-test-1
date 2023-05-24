@@ -1,0 +1,4 @@
+
+gremlin:
+  endpoint: database-nep-test.cluster-cfizanbwsdcy.ap-northeast-2.neptune.amazonaws.com
+  port: 8182

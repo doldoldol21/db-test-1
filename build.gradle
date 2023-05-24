@@ -1,0 +1,48 @@
+buildscript {
+    ext {
+        springBootVersion = '3.0.6'
+        dependencyManagementVersion = '1.1.0'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath "io.spring.gradle:dependency-management-plugin:${dependencyManagementVersion}"
+    }
+}
+
+subprojects {
+    group 'com.example'
+    version '0.0.1-SNAPSHOT'
+
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    sourceCompatibility = 17
+
+    dependencies {
+        compileOnly 'org.projectlombok:lombok'
+        annotationProcessor 'org.projectlombok:lombok'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+        testImplementation 'org.projectlombok:lombok'
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    bootJar {
+        enabled = true
+    }
+    jar {
+        enabled = false
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}
+
+

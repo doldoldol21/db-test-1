@@ -1,0 +1,4 @@
+rootProject.name = 'db-test-1'
+include 'jpa-mariadb'
+include 'neo4j'
+include 'aws-neptune'
