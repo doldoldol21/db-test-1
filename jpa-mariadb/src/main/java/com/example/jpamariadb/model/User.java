@@ -30,7 +30,7 @@ public class User {
     private String phoneNumber;
 
     @Column(nullable = false, length = 30, columnDefinition = "VARCHAR(30) COMMENT '국가'")
-    private String county;
+    private String country;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parent_user_id")
@@ -43,13 +43,13 @@ public class User {
     public User(Long id,
                 String name,
                 String phoneNumber,
-                String county,
+                String country,
                 User parentUser
     ) {
         this.id = id;
         this.name = name;
         this.phoneNumber = phoneNumber;
-        this.county = county;
+        this.country = country;
         this.childUsers = new ArrayList<>();
         this.setParentUser(parentUser);
     }

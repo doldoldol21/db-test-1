@@ -31,7 +31,7 @@ public class User {
     private String phoneNumber;
 
     @Column(nullable = false, length = 30, columnDefinition = "VARCHAR(30) COMMENT '국가'")
-    private String county;
+    private String country;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parent_user_id")
@@ -59,7 +59,7 @@ select distinct u1_0.id,
                 u1_0.county,
                 u1_0.name,
                 p1_0.id,
-                p1_0.county,
+                p1_0.country,
                 p1_0.name,
                 p1_0.parent_user_id,
                 p1_0.phone_number,
